@@ -1,8 +1,5 @@
 const Xdc3 = require("xdc3");
 
-const ppmrpc = "https://rpc-apothem.11ppm.com";
-const erpc = "https://erpc.apothem.network";
-
 const targets = [
 "https://erpc.apothem.network",
 "https://earpc.apothem.network",
