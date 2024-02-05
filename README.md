@@ -27,6 +27,8 @@ Usage: node rpcCheck.js {function}<br>
 <br>
 where {function} is one of the following;<br>
 ============================================================<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-block&nbsp;&nbsp;&nbsp;&nbsp;== Displays the synchronized block number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-block &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display the synchronized block number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-version &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display Master Node version via RPC.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-wsversion == Display Master Node version via websocket.<br>
 <br>
 ============================================================<br>

@@ -25,11 +25,12 @@ const ws_targets = [
 //  ["wss://104.26.9.44","mainnet"]
 ];
 
+/*
 const plitoken = {
   "mainnet": "Ff7412Ea7C8445C46a8254dFB557Ac1E48094391",
   "apothem": "33f4212b027E22aF7e6BA21Fc572843C0D701CD1"
 };
-
+*/
 async function getBlock(rpc, network) {
     try{
         const xdc3 = new Xdc3(new Xdc3.providers.HttpProvider(rpc));
@@ -129,7 +130,7 @@ switch (param) {
     console.log("============================================================");
     console.log("    -block     == Display the synchronized block number.");
     console.log("    -version   == Display Master Node version via RPC.");
-    console.log("    -wsversion == Display Master Node version via websocket");
+    console.log("    -wsversion == Display Master Node version via websocket.");
     console.log("");
     console.log("============================================================");
     console.log("");
