@@ -1,5 +1,5 @@
 # rpcCheck
-Check the validity of RPC.
+Check the validity of RPC and websocket.
 
 # Install the repo
 ```
@@ -16,7 +16,7 @@ npm install
 ```
 nano rpcCheck.js
 ```
-Edit array variable: targets.
+Edit array variable: targets and ws_targets.
 
 # execute
 example
@@ -30,5 +30,6 @@ where {function} is one of the following;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-block &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display the synchronized block number.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-version &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display Master Node version via RPC.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-wsversion == Display Master Node version via websocket.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-gasprice &nbsp; == Display gasprice.<br>
 <br>
 ============================================================<br>
