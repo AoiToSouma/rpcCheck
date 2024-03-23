@@ -94,16 +94,16 @@ async function checkGasPrice() {
 //main logic
 const param = process.argv[2];
 switch (param) {
-  case '-block':
+  case '-blc':
     checkBlock();
     break;
-  case '-version':
+  case '-rpcv':
     checkVersion();
     break;
-  case '-wsversion':
+  case '-wsv':
     checkWSVersion();
     break;
-  case '-gasprice':
+  case '-gas':
     checkGasPrice();
     break;
   default:
@@ -113,10 +113,10 @@ switch (param) {
     console.log("");
     console.log("where {function} is one of the following;");
     console.log("============================================================");
-    console.log("    -block     == Display the synchronized block number.");
-    console.log("    -version   == Display Master Node version via RPC.");
-    console.log("    -wsversion == Display Master Node version via websocket.");
-    console.log("    -gasprice  == Display gasprice.");
+    console.log("    -blc       == Display the synchronized block number.");
+    console.log("    -rpcv      == Display Master Node version via RPC.");
+    console.log("    -wsv       == Display Master Node version via websocket.");
+    console.log("    -gas       == Display gasprice.");
     console.log("");
     console.log("============================================================");
     console.log("");

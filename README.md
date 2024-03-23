@@ -21,15 +21,15 @@ Edit array variable: targets and ws_targets.
 # execute
 example
 ```
-node rpcCheck.js -block
+node rpcCheck.js -blc
 ```
 Usage: node rpcCheck.js {function}<br>
 <br>
 where {function} is one of the following;<br>
 ============================================================<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-block &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display the synchronized block number.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-version &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display Master Node version via RPC.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-wsversion == Display Master Node version via websocket.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-gasprice &nbsp; == Display gasprice.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-blc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display the synchronized block number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-rpcv &nbsp;&nbsp;&nbsp;&nbsp;== Display Master Node version via RPC.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-wsv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display Master Node version via websocket.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-gas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display gasprice.<br>
 <br>
 ============================================================<br>
