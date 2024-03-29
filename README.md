@@ -31,5 +31,6 @@ where {function} is one of the following;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-rpcv &nbsp;&nbsp;&nbsp;&nbsp;== Display Master Node version via RPC.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-wsv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display Master Node version via websocket.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-gas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== Display gasprice.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-prfx &nbsp;&nbsp;&nbsp;&nbsp;== Display prefix type.<br>
 <br>
 ============================================================<br>
