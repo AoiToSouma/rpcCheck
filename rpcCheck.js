@@ -20,6 +20,21 @@ const plitoken = {
   "apothem": "0x33f4212b027E22aF7e6BA21Fc572843C0D701CD1"
 };
 
+function getMaxLength() {
+    let maxlength = 0;
+    for (i=0;i<rpc_targets.length;i++){
+        if((rpc_targets[i][0].length + rpc_targets[i][1].length) > maxlength) {
+            maxlength = rpc_targets[i][0].length + rpc_targets[i][1].length;
+        }
+    }
+    for (j=0;j<ws_targets.length;j++){
+        if((ws_targets[j][0].length + ws_targets[j][1].length) > maxlength) {
+            maxlength = ws_targets[j][0].length + ws_targets[j][1].length;
+        }
+    }
+    return maxlength + 2;
+}
+
 async function getInfo(url_type, proc, url, network) {
     try{
         let xdc3;
@@ -51,24 +66,37 @@ async function getInfo(url_type, proc, url, network) {
                     value = 'XDC prefix';
                 }
                 break;
+            case '-latency':
+              let times = [];
+              times[0] = new Date();
+              let blockNumber = await xdc3.eth.getBlockNumber();
+              times[1] = new Date();
+              let block = await xdc3.eth.getBlock(blockNumber);
+              times[2] = new Date();
+              let blockTime = new Date(JSON.stringify(block.timestamp) * 1000).toISOString();
+              times[3] = (times[1] - times[0]) + (times[2] - times[1]) // Execution time of getBlockNumber + getBlock
+              value = `[latency] ${times[3].toString().padStart(5, ' ')}ms [blockNumber] ${blockNumber} [unix timestamp] ${blockTime}`
+              break;
         }
-        console.log("["+network+"]"+url+" : "+value);
+        console.log(`[${network}]${url}`.padEnd(maxlength, ' ') + `: ${value}`);
+        return value;
     }catch(e){
-        console.log("["+network+"]"+url+" : ["+e.name+"]"+e.message);
+        console.log(`[${network}]${url}`.padEnd(maxlength, ' ') + `: [${e.name}]${e.message}`);
     }
 }
 
 async function outputInfo(url_type, proc, title, targetArray) {
     const now = new Date();
+    var results = [];
     console.log("["+title+"] ", now);
     for (i=0;i<targetArray.length;i++){
-        await getInfo(url_type, proc, targetArray[i][0], targetArray[i][1]);
+        getInfo(url_type, proc, targetArray[i][0], targetArray[i][1]);
     }
-    process.exit();
 }
 
 //main logic
 const param = process.argv[2];
+const maxlength = getMaxLength();
 
 switch (param) {
   case '-blc':
@@ -86,6 +114,9 @@ switch (param) {
   case '-prfx':
     outputInfo('rpc', '-prefix', 'prefix type', rpc_targets);
     break;
+  case '-ltcy':
+    outputInfo('rpc', '-latency', 'latency of getBlock', rpc_targets);
+    break;
   default:
     console.log("");
     console.log("");
@@ -98,6 +129,7 @@ switch (param) {
     console.log("    -wsv       == Display Master Node version via websocket.");
     console.log("    -gas       == Display gasprice.");
     console.log("    -prfx      == Display prefix type");
+    console.log("    -ltcy      == Display latency of getBlock function");
     console.log("");
     console.log("============================================================");
     console.log("");
